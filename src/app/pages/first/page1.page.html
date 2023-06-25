@@ -1,0 +1,21 @@
+<ion-header [translucent]="true">
+
+</ion-header>
+
+<ion-content color="light">
+  <!--img & spinner-->
+
+  <!-- <ion-img class="appinter" src="assets/picture/AppInterface.png"></ion-img> -->
+  <div class="background-image"></div>
+<div class="center" *ngIf="loading" >
+    <ion-spinner color="primary" name="bubbles" text="please"></ion-spinner>
+    <h3>  wait a minute </h3>
+</div>
+<!--button-->
+<ion-button *ngIf="!loading" class="overlay-button custom-button"  (click)="toPageTwo()">Get Started</ion-button>
+
+
+
+
+
+</ion-content>

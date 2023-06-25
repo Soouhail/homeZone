@@ -1,0 +1,60 @@
+.toolbar{
+    margin: 10px;
+    font-size: 24px;
+    color: white;
+    float: left;
+    position: absolute;
+    margin-left: 15%;
+
+
+}
+#notification-button {
+    position: relative;
+    width: 220px;
+    top:10px;
+    right: 10px;
+    overflow: visible!important;
+}
+
+
+#notifications-badge {
+    background-color: red;
+    position: absolute;
+    top: 5px;
+    right: 18px;
+    border-radius: 100%;
+}
+.button  {
+
+    margin: 15px;
+    color : #636363;
+    text-transform: capitalize;
+    font-size: 26px;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif ;
+
+}
+h1{
+    margin-left:310px;
+}
+.font{
+    margin: 12%;
+    color: rgb(255, 255, 255) !important;
+    font-size: 30px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    
+
+}
+.background-image {
+ --background: url('../../../assets/picture/page2.png') 0/110% 100% no-repeat;
+}
+.areu{
+    font-size: 36px ;
+    color: rgb(255, 255, 255);
+    float: left;
+    margin-left: 10%;
+    margin-bottom: 10%;
+    text-transform: uppercase;
+    font-family:' Calibri, sans-serif';
+
+
+}

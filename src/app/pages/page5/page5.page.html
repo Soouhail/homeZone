@@ -1,0 +1,157 @@
+<ion-header>
+  <ion-toolbar color="secondary">
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/" text=""></ion-back-button>
+    </ion-buttons>
+    <ion-title class="ion-text-center" >let's start a conversation </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+
+  <ion-content >
+    <div class="cont">
+    <form #form="ngForm" >
+      <ion-grid>
+        <ion-row color="primary" justify-content-center>
+          <ion-col align-self-center size-md="6" size-lg="5" size-xs="12">
+            <div text-center>
+              <h3 class="ask"  >Ask how we can help you ! </h3>
+            </div>
+            <div padding>
+              <ion-item>
+                <ion-label class="cont" color="favorite" position="stacked">Summary</ion-label>
+                <ion-icon
+                  slot="start"
+                  name="reader-outline"
+                  color="favorite"
+                ></ion-icon>
+                <ion-input
+                  name="name"
+                  type="text"
+                  ngModel
+                  required
+                  clearInput
+                ></ion-input>
+              </ion-item>
+              <ion-item>
+                <ion-label class="cont" color="favorite" >Description</ion-label>
+
+                <ion-textarea class="cont"
+                  rows="6"
+                  cols="30"
+                  placeholder="Enter your problem here..."
+                >
+                </ion-textarea>
+              </ion-item>
+              <ion-list lines="full">
+                <ion-list-header>
+                  <ion-label class="cont" color="favorite">Subjects</ion-label>
+                </ion-list-header>
+                <ion-item>
+                  <ion-label color="favorite" class="cont" placeholder="select one">Select One</ion-label>
+                  <ion-select okText="Okay" cancelText="Dismiss">
+                    <ion-select-option class="cont">Feedback</ion-select-option>
+                    <ion-select-option class="cont">Report a bug</ion-select-option>
+                    <ion-select-option class="cont">Feature request</ion-select-option>
+                    <ion-select-option class="cont">Other</ion-select-option>
+                  </ion-select>
+                </ion-item>
+              </ion-list>
+              <ion-item>
+                <ion-label color="favorite" class="att">
+                  Attachment <br />
+                  (optional)</ion-label
+                >
+                <div class="fileUpload btn btn-primary">
+                  <ion-input
+                    type="file"
+                    class="upload"
+                    class="”ion-text-center"
+                    clearInput
+                  ></ion-input>
+                </div>
+              </ion-item>
+              <ion-item lines="none">
+                <ion-label color="favorite "position="stacked" class="cont">Email</ion-label>
+                <ion-icon slot="start" name="mail" color="favorite"></ion-icon>
+                <ion-input
+                  name="email"
+                  type="email"
+                  placeholder="Example@gmail.com"
+                  ngModel
+                  required
+                  clearInput
+                ></ion-input>
+              </ion-item>
+            </div>
+
+            <div padding >
+
+              <ion-button  class="cont"
+                color="secondary"
+                size="large"
+                type="submit"
+                [disabled]="form.invalid"
+                expand="block" *ngIf="!loading" (click)="sendInfo()"
+                >Send</ion-button>
+ </div>
+
+             <!-- //toast Contact Support//
+
+                <ion-fab
+                vertical="bottom"
+                horizontal="end"
+                slot="fixed"
+                (click)="openToast()">
+                <ion-fab-button>
+                  <ion-icon name="call-outline"></ion-icon>
+                </ion-fab-button>
+              </ion-fab> -->
+
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </form>
+  </div>
+  <h2>   You can contact us here : </h2>
+  <div class="btns">
+  <ion-button href="https://www.facebook.com" target="_blank" ion-button outline item-end color="dark" >
+
+    <ion-icon  color="primary" name="logo-facebook" ></ion-icon>
+    <ion-label class="fbandgm"> facebook</ion-label>
+
+</ion-button
+>
+<ion-button href="https://mail.google.com/mail/u/0/#" target="_blank"  ion-button outline item-start color="dark" class="ion-text-left">
+
+  <ion-icon color="danger" name="mail"></ion-icon>
+  <ion-label class="fbandgm"> gmail</ion-label>
+
+</ion-button>
+
+  </div>
+  </ion-content>
+
+  <ion-footer>
+    <ion-toolbar color="primary" class="footer-toolbar">
+    <ion-segment class="footer-segment">
+      <ion-segment-button layout="icon-start" color="primary" value="0" (click)="toMap()">
+        <ion-label class="fontFooter">Map</ion-label>
+        <ion-icon name="location-outline" color="success"></ion-icon>
+      </ion-segment-button>
+
+      <ion-segment-button value="home" layout="icon-start" value="1" (click)="toHouses()">
+        <ion-label class="fontFooter">Available houses
+          <ion-badge mode="ios" color="danger">6</ion-badge>
+        </ion-label>
+        <ion-icon name="home-outline" color="primary"></ion-icon>
+      </ion-segment-button>
+
+      <ion-segment-button layout="icon-start" color="primary" value="2" (click)="toContact()">
+        <ion-label class="fontFooter">Contact us</ion-label>
+        <ion-icon name="mail-outline" color="secondary"></ion-icon>
+      </ion-segment-button>
+    </ion-segment>
+  </ion-toolbar>
+    </ion-footer>
+

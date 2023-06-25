@@ -1,0 +1,52 @@
+<!-- student page  -->
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/" text=""></ion-back-button>    </ion-buttons>
+    <ion-title>Landlord</ion-title>
+  </ion-toolbar>
+  <ion-item color="favorite">
+    <ion-label class="chooseState"> Choose state </ion-label>
+    <ion-select
+      class="my-custom-interface .select-interface-option .alert-radio-label"
+      [(ngModel)]="country"
+      (ionChange)="optionsFn()"
+    >
+      <ion-select-option
+        color="danger"
+        *ngFor=" let country of countries"
+        value="{{country.value}}"
+      >
+        {{country.name}}
+      </ion-select-option>
+    </ion-select>
+  </ion-item>
+</ion-header>
+<ion-content>
+  <div id="map" style="height: 100%"></div>
+  <!-- fab button -->
+
+</ion-content>
+
+<ion-footer >
+  <ion-toolbar color="primary" class="footer-toolbar">
+  <ion-segment class="footer-segment">
+    <ion-segment-button layout="icon-start" color="primary" value="0" (click)="toMap()">
+      <ion-label class="fontFooter">Map</ion-label>
+      <ion-icon name="location-outline" color="success"></ion-icon>
+    </ion-segment-button>
+
+    <ion-segment-button value="home" layout="icon-start" value="1" (click)="toHouses()">
+      <ion-label class="fontFooter">Available houses
+        <ion-badge mode="ios" color="danger">7</ion-badge>
+      </ion-label>
+      <ion-icon name="home-outline" color="primary"></ion-icon>
+    </ion-segment-button>
+
+    <ion-segment-button layout="icon-start" color="primary" value="2" (click)="toContact()">
+      <ion-label class="fontFooter">Contact us</ion-label>
+      <ion-icon name="mail-outline" color="secondary"></ion-icon>
+    </ion-segment-button>
+  </ion-segment>
+</ion-toolbar>
+  </ion-footer>

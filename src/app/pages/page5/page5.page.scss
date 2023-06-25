@@ -1,0 +1,56 @@
+.fileUpload {
+    position: relative;
+    padding-left: 160px;
+    color: rgb(255, 45, 45);
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+
+}
+
+.att{
+    position: absolute;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+h3{
+    color: black;
+    font-size: 20px;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif
+}
+.ion-text-center{
+    font-size: 18px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    text-transform: capitalize;
+}
+.cont{
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif
+}
+#notifications-badge {
+    background-color: red;
+    position: absolute;
+    top: 2px;
+    left: 107.5px;
+    border-radius:80%;
+    text-align: center;
+    align-items: center;
+    font-size:10px;
+}
+.buttonBack{
+    position: absolute;
+    color: azure;
+}
+.btns{
+    display: flex;
+    justify-content:space-evenly;
+    
+}
+.fbandgm{
+    text-transform: capitalize;
+
+}
+.ask{
+    color: rgb(255, 242, 190);
+    text-transform: capitalize;
+}
+.fontFooter{
+    font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-size: 12px;
+}

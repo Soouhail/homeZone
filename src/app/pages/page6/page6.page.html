@@ -1,0 +1,45 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-item color="primary">
+      <ion-buttons slot="start">
+        <ion-back-button defaultHref="/" text=""></ion-back-button>
+      </ion-buttons>
+      <ion-label> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;Select a State</ion-label>
+      <ion-select [(ngModel)]="country" (ionChange)="optionsFn()">
+        <ion-select-option
+          color="danger"
+          *ngFor=" let country of countries"
+          value="{{country.value}}">
+          {{country.name}}
+        </ion-select-option>
+      </ion-select>
+    </ion-item>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+
+  <div id="map" style="height: 100%"></div>
+
+</ion-content>
+
+<ion-footer color="danger">
+  <ion-segment color="favorite"  (ionChange)="segmentChanged($event)" [(ngModel)]="segment"  >
+    <ion-segment-button layout="icon-start" color="primary" value="0" (click)="toMap()">
+      <ion-label class="fontFooter" > Map </ion-label>
+      <ion-icon name="location-outline" color="favorite"></ion-icon>
+    </ion-segment-button>
+
+
+    <ion-segment-button layout="icon-start" color="primary" value="2" (click)="toAddhome()" >
+      <ion-label class="fontFooter" > Add House </ion-label>
+      <ion-icon color="success" name="add-circle-outline"></ion-icon>    </ion-segment-button>
+
+
+  <ion-segment-button layout="icon-start" color="primary" value="3" (click)="tomarketing()" >
+    <ion-label class="fontFooter" >our offers</ion-label>
+    <ion-icon color="success" name="add-circle-outline"></ion-icon>    </ion-segment-button>
+
+</ion-segment>
+  </ion-footer>
+
+

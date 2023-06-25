@@ -1,0 +1,124 @@
+<ion-header>
+  <ion-toolbar color="favorite">
+    <ion-back-button slot="start"defaultHref="/" text=""></ion-back-button>   </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <ion-label color="primary" class="float"> : الاسم </ion-label>
+  <br>
+  <br>
+
+  <ion-item>
+    <ion-icon color="secondary" name="person-outline"></ion-icon>
+    <ion-input placeholder="name" type="text" [(ngModel)]="name" clearInput></ion-input>
+  </ion-item>
+  <ion-item *ngIf="name?.length == 0" lines="none">
+    <ion-text color="danger">this can't be empty</ion-text>
+  </ion-item>
+  <ion-label class="float" color="primary">البريد الإلكتروني </ion-label>
+  <br>
+  <br>
+  <ion-item>
+    <ion-icon color="secondary" name="mail-outline"></ion-icon>
+    <ion-input placeholder="YourEmail@gmail.com" [(ngModel)]="email" clearInput></ion-input>
+  </ion-item>
+
+  <ion-item *ngIf="email?.length == 0" lines="none">
+    <ion-text color="danger">this can't be empty</ion-text>
+  </ion-item>
+  <ion-label class="float" color="primary">: نومروك </ion-label>
+<br><br>
+  <ion-item>
+    <ion-label color="primary" class="font"> phone (+216)</ion-label>
+    <ion-input type="number" placeholder=" 12 345 678 "> &nbsp;  </ion-input>
+  </ion-item>
+  <ion-label class="float" color="primary">: الولاية</ion-label>
+  <br>
+  <br>
+  <ion-item>
+    <ion-label class="font"> أختار الولاية</ion-label>
+    <ion-select class="my-custom-interface .select-interface-option .alert-radio-label" [(ngModel)]="country">
+      <ion-select-option *ngFor=" let country of countries">
+        {{country.name }}
+      </ion-select-option>
+    </ion-select>
+  </ion-item>
+  <ion-label class="float"  color="primary">:البلاد</ion-label>
+<br><br>
+  <ion-item>
+    <ion-label class="font" position="floating"></ion-label>
+    <ion-input placeholder="  Marsa "></ion-input>
+  </ion-item>
+  <ion-label class="float"  color="primary"> : مواصفات الدار</ion-label>
+  <br>
+  <br>
+  <ion-item>
+    <ion-textarea placeholder="Sallon +2"></ion-textarea>
+
+  </ion-item>
+  <ion-label class="float"  color="primary">  : تصويرة على الخريطة
+  <h6 class="small"> (Map كابتير واضحة لدارك على)</h6> </ion-label>
+<br>z
+<br>
+<br>
+
+  <ion-item>
+    <button class="fileButton" style="display:block;width:120px; height:30px;" onclick="document.getElementById('getFile').click()">اختار تصويرة</button>
+    <input type='file' clearInput id="getFile" style="display:none">
+  </ion-item>
+
+  <ion-label class="float"  color="primary">: تصويرة لدارك
+    <h6 class="small"> (تصويرة واضحة باش يشوفها الكاري)</h6>
+ </ion-label>
+<br>
+<br>
+<br>
+  <ion-item>
+    <button class="fileButton" style="display:block;width:120px; height:30px;" onclick="document.getElementById('getFile').click()">اختار تصويرة</button>
+    <input type='file' clearInput id="getFile" style="display:none">   </ion-item>
+  <ion-item>
+    <ion-label class="float"  color="primary">:(الشهر) الثمن </ion-label>
+    <br>
+    <br>
+    <ion-button  color="primary" value="5" (click)="decrementCount()">
+      <ion-icon name="caret-back-outline"></ion-icon>
+    </ion-button>
+    <ion-button color="primary" value="5" (click)="incrementCount()">
+      <ion-icon name="caret-forward-outline"></ion-icon>
+    </ion-button>
+
+    {{ counter }} (DT)
+
+  </ion-item>
+  <ion-item>
+
+    <p class="agree"> موافق ناخذو من عندك
+      <span style="color: #c72620">5%</span > من سوم الدار
+
+    </p>
+
+    <ion-checkbox slot="start" color="primary" (click)='toggleButton = !toggleButton'></ion-checkbox>
+  </ion-item>
+  <ion-button size="large" expand="full" color="secondary" [disabled]='!toggleButton'>موافق</ion-button>
+  <h3 class="Info">
+    <h3 class="imp">IMPORTANT :</h3> Please be sure to put all your information for we can post you home on our App
+  </h3>
+
+</ion-content>
+
+
+<ion-footer color="danger">
+  <ion-segment color="favorite" (ionChange)="segmentChanged($event)" [(ngModel)]="segment">
+    <ion-segment-button layout="icon-start" color="primary" value="0" (click)="toMap()">
+      <ion-label class="fontFooter" >الخريطة</ion-label>
+      <ion-icon name="location-outline" color="favorite"></ion-icon>
+    </ion-segment-button>
+
+
+    <ion-segment-button layout="icon-start" color="primary" value="2" (click)="toAddhome()">
+      <ion-label class="fontFooter" >زيد دار</ion-label>
+      <ion-icon color="success" name="add-circle-outline"></ion-icon>
+    </ion-segment-button>
+  </ion-segment>
+</ion-footer>

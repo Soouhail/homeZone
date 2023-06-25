@@ -1,0 +1,99 @@
+<ion-header>
+  <ion-toolbar color="secondary">
+    <ion-title class="ion-text-center" >let's start a conversation </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+
+  <ion-content > 
+    <div class="cont">
+    <form #form="ngForm" >
+      <ion-grid>
+        <ion-row color="primary" justify-content-center>
+          <ion-col align-self-center size-md="6" size-lg="5" size-xs="12">
+            <div text-center>
+              <h3  >Ask how we can help you : </h3>
+            </div>
+            <div padding>
+              <ion-item>
+                <ion-label class="cont" color="favorite" position="stacked">Summary</ion-label>
+                <ion-icon
+                  slot="start"
+                  name="reader-outline"
+                  color="favorite"
+                ></ion-icon>
+                <ion-input
+                  name="name"
+                  type="text"
+                  ngModel
+                  required
+                  clearInput
+                ></ion-input>
+              </ion-item>
+              <ion-item>
+                <ion-label class="cont" color="favorite" >Description</ion-label>
+
+                <ion-textarea class="cont" 
+                  rows="6"
+                  cols="30"
+                  placeholder="Enter your problem here..."
+                >
+                </ion-textarea>
+              </ion-item>
+              <ion-list lines="full">
+                <ion-list-header>
+                  <ion-label class="cont" color="favorite">Subjects</ion-label>
+                </ion-list-header>
+                <ion-item>
+                  <ion-label color="favorite" class="cont" placeholder="select one">Select One</ion-label>
+                  <ion-select okText="Okay" cancelText="Dismiss">
+                    <ion-select-option class="cont">Feedback</ion-select-option>
+                    <ion-select-option class="cont">Report a bug</ion-select-option>
+                    <ion-select-option class="cont">Feature request</ion-select-option>
+                    <ion-select-option class="cont">Other</ion-select-option>
+                  </ion-select>
+                </ion-item>
+              </ion-list>
+              <ion-item>
+                <ion-label color="favorite" class="att">
+                  Attachment <br />
+                  (optional)</ion-label
+                >
+                <div class="fileUpload btn btn-primary">
+                  <ion-input
+                    type="file"
+                    class="upload"
+                    class="”ion-text-center"
+                    clearInput
+                  ></ion-input>
+                </div>
+              </ion-item>
+              <ion-item lines="none">
+                <ion-label color="favorite "position="stacked" class="cont">Email</ion-label>
+                <ion-icon slot="start" name="mail" color="favorite"></ion-icon>
+                <ion-input
+                  name="email"
+                  type="email"
+                  placeholder="Example@gmail.com"
+                  ngModel
+                  required
+                  clearInput
+                ></ion-input>
+              </ion-item>
+            </div>
+            <div padding>
+              <ion-button  class="cont"
+                color="secondary"
+                size="large"
+                type="submit"
+                [disabled]="form.invalid"
+                expand="block"
+                >Send</ion-button>
+            </div>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </form>
+  </div>
+  </ion-content>
+
